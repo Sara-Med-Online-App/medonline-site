@@ -1,0 +1,77 @@
+:root {
+  --azul: #1E3A8A;
+  --azul-medio: #2563EB;
+  --azul-claro: #60A5FA;
+  --azul-palido: #EFF6FF;
+  --texto: #1a1a1a;
+  --texto-suave: #4b5563;
+  --fundo: #ffffff;
+  --fundo-alt: #f5f5f9;
+  --borda: rgba(30, 58, 138, 0.1);
+  --fonte: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--fonte); color: var(--texto); background: var(--fundo); line-height: 1.6; }
+img { max-width: 100%; height: auto; }
+a { color: var(--azul-medio); }
+
+.conteudo { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+.topo { position: sticky; top: 0; z-index: 10; background: rgba(255, 255, 255, 0.95); border-bottom: 1px solid var(--borda); backdrop-filter: blur(6px); }
+.topo-linha { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+.marca { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--azul); font-size: 20px; }
+.marca strong { color: var(--azul-medio); }
+.topo nav { display: flex; gap: 20px; flex-wrap: wrap; }
+.topo nav a { color: var(--texto-suave); text-decoration: none; font-size: 15px; }
+.topo nav a:hover { color: var(--azul); }
+
+.destaque { background: linear-gradient(135deg, var(--azul-palido) 0%, #ffffff 70%); padding: 72px 0 64px; }
+.destaque-grade { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+.destaque-imagem { display: flex; justify-content: center; }
+.selo { display: inline-block; margin: 0 0 12px; padding: 4px 12px; border-radius: 999px; background: #DBEAFE; color: var(--azul); font-size: 13px; font-weight: 600; }
+h1 { font-size: 44px; line-height: 1.15; margin: 0 0 16px; color: var(--azul); }
+.lead { font-size: 19px; color: var(--texto-suave); margin: 0 0 28px; }
+.acoes { display: flex; gap: 12px; flex-wrap: wrap; }
+.botao { display: inline-block; padding: 14px 22px; border-radius: 12px; background: var(--azul-medio); color: #fff; font-weight: 600; text-decoration: none; }
+.botao:hover { background: var(--azul); }
+.botao-claro { background: #fff; color: var(--azul); border: 1px solid var(--borda); }
+.botao-claro:hover { background: var(--azul-palido); }
+.nota { margin-top: 20px; font-size: 14px; color: var(--texto-suave); }
+
+.secao { padding: 64px 0; }
+.secao-alternada { background: var(--fundo-alt); }
+h2 { font-size: 30px; margin: 0 0 8px; color: var(--azul); }
+.sub { color: var(--texto-suave); margin: 0 0 28px; max-width: 720px; }
+.cartoes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.cartao { background: #fff; border: 1px solid var(--borda); border-radius: 16px; padding: 22px; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04); }
+.cartao h3 { margin: 0 0 8px; font-size: 18px; color: var(--azul); }
+.cartao p { margin: 0; color: var(--texto-suave); font-size: 15px; }
+
+.duas-colunas { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+.duas-colunas p { color: var(--texto-suave); }
+.lista { list-style: none; margin: 0; padding: 22px; background: #fff; border: 1px solid var(--borda); border-radius: 16px; }
+.lista li { padding: 10px 0 10px 28px; position: relative; border-bottom: 1px solid var(--fundo-alt); }
+.lista li:last-child { border-bottom: none; }
+.lista li::before { content: '✓'; position: absolute; left: 0; color: var(--azul-medio); font-weight: 700; }
+
+.links-legais { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 28px; }
+.aviso-emergencia { padding: 24px 0; background: #fef2f2; color: #991b1b; }
+.aviso-emergencia p { margin: 0; }
+.contato { font-size: 20px; margin: 0; }
+
+.rodape { background: var(--azul); color: #dbeafe; padding: 40px 0 24px; font-size: 14px; }
+.rodape a { color: #fff; }
+.rodape-grade { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.rodape-marca { font-size: 18px; font-weight: 700; color: #fff; margin: 0 0 6px; }
+.rodape-links { display: flex; flex-direction: column; gap: 6px; }
+.copyright { margin: 24px 0 0; opacity: 0.8; }
+
+@media (max-width: 860px) {
+  .destaque-grade, .duas-colunas { grid-template-columns: 1fr; }
+  .destaque-imagem { display: none; }
+  .cartoes { grid-template-columns: 1fr; }
+  h1 { font-size: 34px; }
+  .topo nav { display: none; }
+}
